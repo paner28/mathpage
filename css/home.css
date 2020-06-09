@@ -2,6 +2,7 @@ body {
     /* text-align:center; */
     margin:0;
     user-select: none;
+    background-color: #efefef;
 }
 
 .bar{
@@ -17,55 +18,99 @@ h1 {
     font-weight:bold;
 }
   
-#canvas {
-    border:2px solid gray;
+h1{
+    text-align:center;
+    height: 200px;
 }
 
-#aaa {
-    overflow:hidden;
-    margin-top:20px;
+main{
+    display: flex;
 }
 
-.headder{
-    margin-left: 5px;
+.button {
+    position: relative;
+    display: inline-block;
+    width: 100px;
+    height: 25px;
+    padding: .7em 4em;
+    border: 2px solid #333;
+    color: #333;
+    text-align: center;
+    text-decoration: none;
+    transition: .3s;
+    margin: 0 50px 0 50px;
 }
-
-#bbb {
-    margin-left: 5px;
-    float: left;
-    width: 1320px;
+.button:hover {
+    color: #fff;
 }
-
-#ccc {
-    float: left;
-    margin-left: 5px;
-    margin-right: 0px;
-    width: 140px;
-    height: 30px;
-    cursor: pointer;
-    user-select: none;
+.button{
+    overflow: hidden;
 }
-
-.color{
-    width: 30px;
-    height: 30px;
-    display:inline-block;
-    border-color: rgba(86, 86, 86, .7);
+.button::before {
+    position: absolute;
+    top: 0;
+    left: -5%;
+    z-index: -1;
+    content: '';
+    width: 110%;
+    height: 180%;
+    background: #333;
+    transform-origin: left bottom;
+    transform: skewY(-10deg) scale(1, 0);
+    transition: transform .3s;
 }
-
-#item1 {
-    float:left;
-    width:auto;
-    /* margin-left:100px; */
-}
-
-#item2 {
-    float:left;
-    width:auto;
-    margin-left:10px;
+.button:hover::before {
+    transform-origin: left top;
+    transform: skewY(-10deg) scale(1, 1);
 }
 
 
+
+
+
+
+
+
+
+@import url(https://fonts.googleapis.com/css?family=EB+Garamond|Cardo:400italic);
+
+.sandbox-correct-pronounciation {
+    padding: 100px 0 100px 0;
+}
+
+.heading-correct-pronounciation {
+    margin: auto;
+    text-align: center;
+    position: relative;
+}
+
+h1 {
+    color: rgb(57, 57, 110);
+    font-family: 'Cardo', serif;
+    font-size: 1.5em;
+    font-weight: normal;
+    font-style: italic;
+    letter-spacing: 0.1em;
+    line-height: 2.2em;
+}
+
+em {
+    font-family: 'EB Garamond', serif;
+    font-size: 3.5em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    display: block;
+    font-style:normal;
+    padding-top: 0.1em;
+    text-shadow: 0.07em 0.07em 0 rgba(0, 0, 0, 0.1);
+}
+  
+.bottom {
+    font-size: 1.5em;
+    letter-spacing: 0.07em;
+    font-size: 1em;
+    display: block;
+}
 
 
 
