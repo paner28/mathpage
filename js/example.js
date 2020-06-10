@@ -7,12 +7,12 @@ function cuturl(){
 }
 
 //CSVファイルを読み込む関数getCSV()の定義
-function getCSV(){
+function getCSV(question_num){
     var req = new XMLHttpRequest(); // HTTPでファイルを読み込むためのXMLHttpRrequestオブジェクトを生成
     req.open("get", "main.csv", true); // アクセスするファイルを指定
     req.send(null); // HTTPリクエストの発行
     // レスポンスが返ってきたらconvertCSVtoArray()を呼ぶ
-    req.onload = function(){
+    req.onload = function(question_num){
 	convertCSVtoArray(req.responseText); // 渡されるのは読み込んだCSVデータ
     }
 }
