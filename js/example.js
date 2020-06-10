@@ -15,6 +15,7 @@ function getCSV(){
     req.onload = function(){
 	convertCSVtoArray(req.responseText); // 渡されるのは読み込んだCSVデータ
     }
+    return result;
 }
 
 // 読み込んだCSVデータを二次元配列に変換する関数convertCSVtoArray()の定義
