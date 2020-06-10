@@ -1,10 +1,10 @@
 function cuturl(){
     var href = window.location.href ;
-    var question_num = href.slice(20,-5);
+    var question_num = href.slice(44,-5);
     return question_num;
 }
 
-console.log("9");
+console.log("10");
 
 //CSVファイルを読み込む関数getCSV()の定義
 function getCSV(){
