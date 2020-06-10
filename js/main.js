@@ -1,7 +1,7 @@
 // urlを読みこむ関数
 function cuturl(){
     var href = window.location.href ;
-    var question_num = Number(href.slice(45,-5));
+    var question_num = Number(href.slice(54,-5));
     return question_num;
 }
 
