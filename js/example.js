@@ -1,10 +1,10 @@
 function cuturl(){
     var href = window.location.href ;
-    var question_num = href.slice(44,-5);
+    var question_num = Number(href.slice(44,-5));
     return question_num;
 }
 
-console.log("1");
+console.log("2");
 
 //CSVファイルを読み込む関数getCSV()の定義
 function getCSV(){
@@ -28,19 +28,19 @@ function convertCSVtoArray(str){ // 読み込んだCSVデータが文字列と�
     }
 }
 
-var question_num = Number(cuturl());
+var question_num = cuturl();
 var result = getCSV(question_num);
 
 var q1 = document.getElementById("q1");
 var q2 = document.getElementById("q2");
 var q3 = document.getElementById("q3");
 
-// const child1 = document.createElement('div');
-// child1.textContent = result[question_num][2];
-// q1.appendChild(child1)
-// const child2 = document.createElement('div');
-// child2.textContent = result[question_num][3];
-// q2.appendChild(child2)
-// const child3 = document.createElement('div');
-// child3.textContent = result[question_num][4];
-// q3.appendChild(child3)
+const child1 = document.createElement('div');
+child1.textContent = result[question_num][2];
+q1.appendChild(child1)
+const child2 = document.createElement('div');
+child2.textContent = result[question_num][3];
+q2.appendChild(child2)
+const child3 = document.createElement('div');
+child3.textContent = result[question_num][4];
+q3.appendChild(child3)
