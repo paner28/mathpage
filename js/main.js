@@ -30,10 +30,10 @@ function convertCSVtoArray(str){ // 読み込んだCSVデータが文字列と�
     var q2 = document.getElementById("q2");
     var q3 = document.getElementById("q3");
 
-    const child1 = document.createElement('div');
+    const child1 = document.createElement('span');
     child1.textContent = result[question_num][2];
     q1.appendChild(child1)
-    const child2 = document.createElement('div');
+    const child2 = document.createElement('span');
     child2.textContent = result[question_num][3];
     q2.appendChild(child2)
 //     const child3 = document.createElement('div');
