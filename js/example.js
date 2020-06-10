@@ -4,7 +4,7 @@ function cuturl(){
     return question_num;
 }
 
-console.log("11");
+console.log("12");
 
 //CSVファイルを読み込む関数getCSV()の定義
 function getCSV(){
@@ -30,8 +30,8 @@ function convertCSVtoArray(str){ // 読み込んだCSVデータが文字列と�
     return result;
 }
 
-var question_num = cuturl();
-var result = Number(getCSV(question_num));
+var question_num = Number(cuturl());
+var result = getCSV(question_num);
 
 var q1 = document.getElementById("q1");
 var q2 = document.getElementById("q2");
