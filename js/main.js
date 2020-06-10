@@ -36,9 +36,9 @@ function convertCSVtoArray(str){ // 読み込んだCSVデータが文字列と�
     const child2 = document.createElement('div');
     child2.textContent = result[question_num][3];
     q2.appendChild(child2)
-    const child3 = document.createElement('div');
-    child3.textContent = result[question_num][4];
-    q3.appendChild(child3)
+//     const child3 = document.createElement('div');
+//     child3.textContent = result[question_num][4];
+//     q3.appendChild(child3)
 }
 
 var question_num = cuturl();
