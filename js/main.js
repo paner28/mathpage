@@ -3,7 +3,6 @@ function cuturl(){
     var href = window.location.href ;
     var question_num = Number(href.slice(45,-5));
     return question_num;
-    console.log(question_num);
 }
 
 //CSVファイルを読み込む関数getCSV()の定義
@@ -43,7 +42,9 @@ function convertCSVtoArray(str){ // 読み込んだCSVデータが文字列と�
 }
 
 var question_num = cuturl();
+console.log(question_num);
 var result = getCSV(question_num);
+
 
 // ここから正誤判定
 const sendButton = document.getElementById('send');
