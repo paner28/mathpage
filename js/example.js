@@ -16,7 +16,7 @@ function getCSV(){
     // レスポンスが返ってきたらconvertCSVtoArray()を呼ぶ
     req.onload = function(){
 	convertCSVtoArray(req.responseText); // 渡されるのは読み込んだCSVデータ
-	return result;
+	var result = result2
     }
     return result;
 }
@@ -30,7 +30,8 @@ function convertCSVtoArray(str){ // 読み込んだCSVデータが文字列と�
     for(var i=0;i<tmp.length;++i){
         result[i] = tmp[i].split(',');
     }
-    return result;
+    var result2 = result
+    return result2;
 }
 
 cuturl();
