@@ -6,7 +6,7 @@ function cuturl(){
     return question_num;
 }
 
-console.log("3");
+console.log("4");
 
 //CSVファイルを読み込む関数getCSV()の定義
 function getCSV(){
