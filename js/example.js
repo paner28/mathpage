@@ -1,12 +1,10 @@
 function cuturl(){
     var href = window.location.href ;
-    var a = href.split("example");
-    var bunnya = href.split("-");
-    var question_num = bunnya[1].slice(-5);
+    var question_num = href.slice(20,-5);
     return question_num;
 }
 
-console.log("8");
+console.log("9");
 
 //CSVファイルを読み込む関数getCSV()の定義
 function getCSV(){
