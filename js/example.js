@@ -12,11 +12,11 @@ function getCSV(){
     req.open("get", "main.csv", true); // アクセスするファイルを指定
     req.send(null); // HTTPリクエストの発行
     // レスポンスが返ってきたらconvertCSVtoArray()を呼ぶ
-    var result = function(){
+    var result = function load(){
 	var result = convertCSVtoArray(req.responseText); // 渡されるのは読み込んだCSVデータ
 	return result;
     }
-    erq.onload = function;
+    erq.onload = load;
     return result;
 }
 
