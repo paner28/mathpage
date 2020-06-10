@@ -6,6 +6,8 @@ function cuturl(){
     return question_num;
 }
 
+console.log("2");
+
 //CSVファイルを読み込む関数getCSV()の定義
 function getCSV(){
     var req = new XMLHttpRequest(); // HTTPでファイルを読み込むためのXMLHttpRrequestオブジェクトを生成
