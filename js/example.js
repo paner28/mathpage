@@ -6,8 +6,6 @@ function cuturl(){
     return question_num;
 }
 
-console.log(question_num);
-
 //CSVファイルを読み込む関数getCSV()の定義
 function getCSV(question_num){
     var req = new XMLHttpRequest(); // HTTPでファイルを読み込むためのXMLHttpRrequestオブジェクトを生成
@@ -43,4 +41,5 @@ function convertCSVtoArray(str){ // 読み込んだCSVデータが文字列と�
     q3.appendChild(child3)
 }
 
+cuturl();
 getCSV();
