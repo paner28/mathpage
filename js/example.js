@@ -9,20 +9,18 @@ function cuturl(){
 console.log("4");
 
 //CSVファイルを読み込む関数getCSV()の定義
-function getCSV(){
+function getCSV(self){
     var req = new XMLHttpRequest(); // HTTPでファイルを読み込むためのXMLHttpRrequestオブジェクトを生成
     req.open("get", "main.csv", true); // アクセスするファイルを指定
     req.send(null); // HTTPリクエストの発行
     // レスポンスが返ってきたらconvertCSVtoArray()を呼ぶ
-    req.onload = function(){
-	convertCSVtoArray(req.responseText); // 渡されるのは読み込んだCSVデータ
-	var result = result2
+    req.onload = function(self){
+	convertCSVtoArray(req.responseText,self); // 渡されるのは読み込んだCSVデータ
     }
-    return result;
 }
 
 // 読み込んだCSVデータを二次元配列に変換する関数convertCSVtoArray()の定義
-function convertCSVtoArray(str){ // 読み込んだCSVデータが文字列として渡される
+function convertCSVtoArray(str,self){ // 読み込んだCSVデータが文字列として渡される
     var result = []; // 最終的な二次元配列を入れるための配列
     var tmp = str.split("\n"); // 改行を区切り文字として行を要素とした配列を生成
     console.log(result)
@@ -30,23 +28,20 @@ function convertCSVtoArray(str){ // 読み込んだCSVデータが文字列と�
     for(var i=0;i<tmp.length;++i){
         result[i] = tmp[i].split(',');
     }
-    var result2 = result
-    return result2;
+    var q1 = document.getElementById("q1");
+    var q2 = document.getElementById("q2");
+    var q3 = document.getElementById("q3");
+
+    const child1 = document.createElement('div');
+    child1.textContent = result[question_num][2];
+    q1.appendChild(child1)
+    const child2 = document.createElement('div');
+    child2.textContent = result[question_num][3];
+    q2.appendChild(child2)
+    const child3 = document.createElement('div');
+    child3.textContent = result[question_num][4];
+    q3.appendChild(child3)
 }
 
 cuturl();
-getCSV();
-
-var q1 = document.getElementById("q1");
-var q2 = document.getElementById("q2");
-var q3 = document.getElementById("q3");
-
-const child1 = document.createElement('div');
-child1.textContent = result[question_num][2];
-q1.appendChild(child1)
-const child2 = document.createElement('div');
-child2.textContent = result[question_num][3];
-q2.appendChild(child2)
-const child3 = document.createElement('div');
-child3.textContent = result[question_num][4];
-q3.appendChild(child3)
+getCSV(question_num);
