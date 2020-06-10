@@ -3,7 +3,7 @@ function cuturl(){
     var a = href.split("example");
     var bunnya = href.split("-");
     var question_num = bunnya[1].slice(-5);
-    return b[0];
+    return question_num;
 }
 
 //CSVファイルを読み込む関数getCSV()の定義
