@@ -4,7 +4,7 @@ function cuturl(){
     return question_num;
 }
 
-console.log("12");
+console.log("13");
 
 //CSVファイルを読み込む関数getCSV()の定義
 function getCSV(){
@@ -13,11 +13,11 @@ function getCSV(){
     req.send(null); // HTTPリクエストの発行
     // レスポンスが返ってきたらconvertCSVtoArray()を呼ぶ
     req.onload = function(){
-	var result = convertCSVtoArray(req.responseText); // 渡されるのは読み込んだCSVデータ
-	return result;
-	console.log(result);
+	convertCSVtoArray(req.responseText); // 渡されるのは読み込んだCSVデータ
     }
+    var result = convertCSVtoArray(req.responseText); // 渡されるのは読み込んだCSVデータ
     return result;
+    console.log(result);
 }
 
 // 読み込んだCSVデータを二次元配列に変換する関数convertCSVtoArray()の定義
