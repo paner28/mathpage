@@ -4,7 +4,7 @@ function cuturl(){
     return question_num;
 }
 
-console.log("7");
+console.log("8");
 
 //CSVファイルを読み込む関数getCSV()の定義
 function getCSV(){
@@ -17,7 +17,7 @@ function getCSV(){
     }
 }
 
-result = []
+var result = [];
 
 // 読み込んだCSVデータを二次元配列に変換する関数convertCSVtoArray()の定義
 function convertCSVtoArray(str){ // 読み込んだCSVデータが文字列として渡される
