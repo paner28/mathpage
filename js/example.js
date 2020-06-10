@@ -16,7 +16,7 @@ function getCSV(){
 	var result = convertCSVtoArray(req.responseText); // 渡されるのは読み込んだCSVデータ
 	return result;
     }
-    erq.onload = load;
+    req.onload = load;
     return result;
 }
 
