@@ -25,7 +25,7 @@ function csvToArray(path) {
         return csvData;
 }
 
-var answer0 = [];
+var answers = [];
 var num = cuturl();
 var q1 = document.getElementById("q1");
 var q2 = document.getElementById("q2");
@@ -42,7 +42,7 @@ window.onload=function () {
     var result = csvToArray("main.csv");
     for (let i=1 ; i < result.length; i++){
         if(result[i][1] == question_num){
-            answer0 = result[i][4].split(" ");
+            answers = result[i][4].split(" ");
 //             var answers = answer0.map(function(str) {return Number(str)});
             const child1 = document.createElement('span');
             child1.textContent = result[i][2];
