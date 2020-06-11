@@ -1,46 +1,63 @@
 function cuturl(){
     var href = window.location.href ;
-    var question_num = Number(href.slice(44,-5));
-    return question_num;
+    var a = href.split("question");
+    var b = a[1].split("-");
+    var num = [0,0];
+    num[0] = Number(b[0]);
+    num[1] = Number(b[1].slice(-5));
+    return um;
 }
 
-console.log("13");
+console.log("1");
 
-//CSVファイルを読み込む関数getCSV()の定義
-function getCSV(){
-    var req = new XMLHttpRequest(); // HTTPでファイルを読み込むためのXMLHttpRrequestオブジェクトを生成
-    req.open("get", "main.csv", true); // アクセスするファイルを指定
-    req.send(null); // HTTPリクエストの発行
-    // レスポンスが返ってきたらconvertCSVtoArray()を呼ぶ
-    req.onload = function(){
-	convertCSVtoArray(req.responseText); // 渡されるのは読み込んだCSVデータ
+function getCsv(url){
+    //CSVファイルを文字列で取得。
+    var txt = new XMLHttpRequest();
+    txt.open('get', url, false);
+    txt.send();
+    //改行ごとに配列化
+    var arr = txt.responseText.split('\n');
+    //1次元配列を2次元配列に変換
+    var result = [];
+    for(var i = 0; i < arr.length; i++){
+        //空白行が出てきた時点で終了
+        if(arr[i] == '') break;
+        //","ごとに配列化
+        result[i] = arr[i].split(',');
+        for(var i2 = 0; i2 < result[i].length; i2++){
+            // //数字の場合は「"」を削除
+            // if(result[i][i2].match(/\-?\d+(.\d+)?(e[\+\-]d+)?/)){
+            //     result[i][i2] = parseFloat(result[i][i2].replace('"', ''));
+            // }
+        }
+    }
+    return result;
+}
+
+var num = cuturl();
+var result = getCSV(main.csv);
+  
+
+var q1 = document.getElementById("q1");
+var q2 = document.getElementById("q2");
+var q3 = document.getElementById("q3");
+
+if (num[0]==1){
+    let question_num = num[1];
+}else{
+    let question_num = (num[0]-1)*100 + num[1];
+}
+
+for (let i=0 ; i < result.length; i++){
+    if(result[i][1] == question_num){
+        const child1 = document.createElement('span');
+        child1.textContent = result[i][2];
+        q1.appendChild(child1)
+        const child2 = document.createElement('span');
+        child2.textContent = result[i][3];
+        q2.appendChild(child2)
+        const child3 = document.createElement('span');
+        child3.textContent = result[i][4];
+        q3.appendChild(child3)
     }
 }
-
-// 読み込んだCSVデータを二次元配列に変換する関数convertCSVtoArray()の定義
-function convertCSVtoArray(str){ // 読み込んだCSVデータが文字列として渡される
-    var result = []; // 最終的な二次元配列を入れるための配列
-    var tmp = str.split("\n"); // 改行を区切り文字として行を要素とした配列を生成
-    // 各行ごとにカンマで区切った文字列を要素とした二次元配列を生成
-    for(var i=0;i<tmp.length;++i){
-        result[i] = tmp[i].split(',');
-    }
-    console.log(result)
-
-    var q1 = document.getElementById("q1");
-    var q2 = document.getElementById("q2");
-    var q3 = document.getElementById("q3");
-
-    const child1 = document.createElement('div');
-    child1.textContent = result[question_num][2];
-    q1.appendChild(child1)
-    const child2 = document.createElement('div');
-    child2.textContent = result[question_num][3];
-    q2.appendChild(child2)
-    const child3 = document.createElement('div');
-    child3.textContent = result[question_num][4];
-    q3.appendChild(child3)
-}
-
-var question_num = cuturl();
-var result = getCSV(question_num);
