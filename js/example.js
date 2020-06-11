@@ -8,8 +8,6 @@ function cuturl(){
     return num;
 }
 
-console.log("5");
-
 // CSVファイル読み込み
 function csvToArray(path) {
         var csvData = new Array();
@@ -27,9 +25,8 @@ function csvToArray(path) {
         return csvData;
 }
 
+var answers = [];
 var num = cuturl();
-console.log(num);
-
 var q1 = document.getElementById("q1");
 var q2 = document.getElementById("q2");
 var q3 = document.getElementById("q3");
@@ -44,10 +41,11 @@ console.log(question_num);
 // ページロード時に実行
 window.onload=function () {
     var result = csvToArray("main.csv");
-    console.log(result);
     for (let i=1 ; i < result.length; i++){
         if(result[i][1] == question_num){
             console.log("ok");
+            answers = result[i][4].split(" ");
+            console.log(answers);
             const child1 = document.createElement('span');
             child1.textContent = result[i][2];
             q1.appendChild(child1)
@@ -55,9 +53,9 @@ window.onload=function () {
             child2.textContent = result[i][3];
             q2.appendChild(child2)
             const child3 = document.createElement('span');
-            child3.textContent = result[i][4];
+            child3.textContent = "Q" + num[1] + ".";
             q3.appendChild(child3)
         }
     }
-    alert(result[0]);
+    console.log(result);
 };
