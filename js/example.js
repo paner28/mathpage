@@ -44,7 +44,7 @@ window.onload=function () {
     for (let i=1 ; i < result.length; i++){
         if(result[i][1] == question_num){
             console.log("ok");
-            answers = result[i][4].split(" ");
+            answers = Numbers(result[i][4].split(" "));
             console.log(answers);
             const child1 = document.createElement('span');
             child1.textContent = result[i][2];
