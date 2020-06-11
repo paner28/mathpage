@@ -4,7 +4,7 @@ function cuturl(){
     var b = a[1].split("-");
     var num = [0,0];
     num[0] = Number(b[0]);
-    num[1] = b[1].slice(-5);
+    num[1] = b[1].slice(0,-5);
     console.log(b);
     return num;
 }
