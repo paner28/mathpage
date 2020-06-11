@@ -10,7 +10,7 @@ function cuturl(){
 
 console.log("1");
 
-function getCsv(url){
+function getCSV(url){
     //CSVファイルを文字列で取得。
     var txt = new XMLHttpRequest();
     txt.open('get', url, false);
@@ -35,6 +35,7 @@ function getCsv(url){
 }
 
 var num = cuturl();
+consolo.log(num);
 var result = getCSV(main.csv);
   
 
