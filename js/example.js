@@ -4,11 +4,11 @@ function cuturl(){
     var b = a[1].split("-");
     var num = [0,0];
     num[0] = Number(b[0]);
-    num[1] = Number(b[1].slice(-5));
+    num[1] = b[1].slice(-5);
     return num;
 }
 
-console.log("1");
+console.log("2");
 
 function getCSV(url){
     //CSVファイルを文字列で取得。
