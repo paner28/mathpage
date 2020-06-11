@@ -45,7 +45,6 @@ window.onload=function () {
         if(result[i][1] == question_num){
             console.log("ok");
             answer0 = result[i][4].split(" ");
-            var answers = answer0.map(function(str) {return Number(str)});
             const child1 = document.createElement('span');
             child1.textContent = result[i][2];
             q1.appendChild(child1)
@@ -60,4 +59,5 @@ window.onload=function () {
     console.log(result);
 };
 
+var answers = answer0.map(function(str) {return Number(str)});
 console.log(answers);
