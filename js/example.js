@@ -4,12 +4,11 @@ function cuturl(){
     var b = a[1].split("-");
     var num = [0,0];
     num[0] = Number(b[0]);
-    num[1] = b[1].slice(0,-5);
-    console.log(b);
+    num[1] = Number(b[1].slice(0,-5));
     return num;
 }
 
-console.log("4");
+console.log("5");
 
 // CSVファイル読み込み
 function csvToArray(path) {
@@ -40,24 +39,23 @@ if (num[0]==1){
 }else{
     var question_num = (num[0]-1)*100 + num[1];
 }
+console.log(question_num);
 
 // ページロード時に実行
 window.onload=function () {
     var result = csvToArray("main.csv");
     for (let i=0 ; i < result.length; i++){
-    if(result[i][1] == question_num){
-        const child1 = document.createElement('span');
-        child1.textContent = result[i][2];
-        q1.appendChild(child1)
-        const child2 = document.createElement('span');
-        child2.textContent = result[i][3];
-        q2.appendChild(child2)
-        const child3 = document.createElement('span');
-        child3.textContent = result[i][4];
-        q3.appendChild(child3)
-    alert(result[0]);
+        if(result[i][1] == question_num){
+            const child1 = document.createElement('span');
+            child1.textContent = result[i][2];
+            q1.appendChild(child1)
+            const child2 = document.createElement('span');
+            child2.textContent = result[i][3];
+            q2.appendChild(child2)
+            const child3 = document.createElement('span');
+            child3.textContent = result[i][4];
+            q3.appendChild(child3)
+        }
     }
-}
-    
- 
+    alert(result[0]);
 };
