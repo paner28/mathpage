@@ -1,7 +1,7 @@
 // urlを読みこむ関数
 function cuturl(){
     var href = window.location.href ;
-    var question_num = Number(href.slice(45,-5));
+    var question_num = Number(href.slice(54,-5));
     return question_num;
 }
 
@@ -36,7 +36,7 @@ function convertCSVtoArray(str){ // 読み込んだCSVデータが文字列と�
     const child2 = document.createElement('span');
     child2.textContent = result[question_num][3];
     q2.appendChild(child2)
-    const child3 = document.createElement('div');
+    const child3 = document.createElement('span');
     child3.textContent = "Q" + question_num + ".";
     q3.appendChild(child3)
 }
