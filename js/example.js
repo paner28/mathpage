@@ -35,7 +35,7 @@ function getCSV(url){
 }
 
 var num = cuturl();
-consolo.log(num);
+console.log(num);
 var result = getCSV(main.csv);
   
 
