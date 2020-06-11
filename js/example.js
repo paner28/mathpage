@@ -4,7 +4,7 @@ function cuturl(){
     var b = a[1].split("-");
     var num = [0,0];
     num[0] = Number(b[0]);
-    num[1] = b[1];
+    num[1] = b[1].splot(-5);
     console.log(b);
     return num;
 }
@@ -28,12 +28,6 @@ function csvToArray(path) {
         return csvData;
 }
 
-// ページロード時に実行
-window.onload=function () {
-    var result = csvToArray("main.csv");
-    alert(result[0]);
-};
-
 var num = cuturl();
 console.log(num);
 
@@ -47,7 +41,11 @@ if (num[0]==1){
     var question_num = (num[0]-1)*100 + num[1];
 }
 
-for (let i=0 ; i < result.length; i++){
+// ページロード時に実行
+window.onload=function () {
+    var result = csvToArray("main.csv");
+    alert(result[0]);
+    for (let i=0 ; i < result.length; i++){
     if(result[i][1] == question_num){
         const child1 = document.createElement('span');
         child1.textContent = result[i][2];
@@ -60,3 +58,6 @@ for (let i=0 ; i < result.length; i++){
         q3.appendChild(child3)
     }
 }
+    
+ 
+};
