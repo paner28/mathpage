@@ -4,11 +4,11 @@ function cuturl(){
     var b = a[1].split("-");
     var num = [0,0];
     num[0] = Number(b[0]);
-    num[1] = b[1].slice(-5);
+    num[1] = b[1].slice(1);
     return num;
 }
 
-console.log("2");
+console.log("3");
 
 function getCSV(url){
     //CSVファイルを文字列で取得。
@@ -44,9 +44,9 @@ var q2 = document.getElementById("q2");
 var q3 = document.getElementById("q3");
 
 if (num[0]==1){
-    let question_num = num[1];
+    var question_num = num[1];
 }else{
-    let question_num = (num[0]-1)*100 + num[1];
+    var question_num = (num[0]-1)*100 + num[1];
 }
 
 for (let i=0 ; i < result.length; i++){
