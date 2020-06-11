@@ -5,7 +5,7 @@ function cuturl(){
     var num = [0,0];
     num[0] = Number(b[0]);
     num[1] = Number(b[1].slice(-5));
-    return um;
+    return num;
 }
 
 console.log("1");
