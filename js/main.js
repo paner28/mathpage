@@ -65,7 +65,7 @@ window.onload=function () {
         var judge = 1;
         if(target.length == answers.length){
             for(let i=0; i<target.length; i++){
-                if(answers.indexOf(parseFloat(target[i])) >= 0){}else{judge = 0;}
+                if(answers.indexOf(target[i]) >= 0){}else{judge = 0;}
             }
             if(judge==1){alert("正解🎊");}else{alert("✖不正解✖");}
         }else{alert("✖不正解✖");}
