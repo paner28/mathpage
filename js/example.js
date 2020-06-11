@@ -36,7 +36,7 @@ function getCSV(url){
 
 var num = cuturl();
 console.log(num);
-var result = getCSV(main.csv);
+var result = getCSV("main.csv");
   
 
 var q1 = document.getElementById("q1");
