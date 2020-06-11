@@ -36,14 +36,12 @@ if (num[0]==1){
 }else{
     var question_num = (num[0]-1)*100 + num[1];
 }
-console.log(question_num);
 
 // ページロード時に実行
 window.onload=function () {
     var result = csvToArray("main.csv");
     for (let i=1 ; i < result.length; i++){
         if(result[i][1] == question_num){
-            console.log("ok");
             answer0 = result[i][4].split(" ");
             const child1 = document.createElement('span');
             child1.textContent = result[i][2];
@@ -61,3 +59,4 @@ window.onload=function () {
 
 var answers = answer0.map(function(str) {return Number(str)});
 console.log(answers);
+console.log("2");
