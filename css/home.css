@@ -31,7 +31,7 @@ main{
 .button {
     position: relative;
     display: inline-block;
-    width: 100px;
+    width: 110px;
     height: 25px;
     padding: .7em 4em;
     border: 2px solid #333;
@@ -68,6 +68,30 @@ main{
 a {
     text-decoration: none;
     color: black;
+}
+
+.a {
+    font-family: 'EB Garamond', serif;
+    color: black;
+    font-size: 25px;
+    position: relative;
+    display: inline-block;
+    transition: .3s;
+}
+.a::after {
+    position: absolute;
+    bottom: .3em;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: #2ecc71;
+    opacity: 0;
+    transition: .3s;
+}
+.a:hover::after {
+    bottom: 0;
+    opacity: 1;
 }
 
 @import url(https://fonts.googleapis.com/css?family=EB+Garamond|Cardo:400italic);
@@ -179,8 +203,9 @@ header {
 #nav-content {
     overflow: auto;
     position: fixed;
-    background-color: rgb(204, 249, 255);
+    text-align: center;
     padding: 20px;
+    background-color: rgb(204, 249, 255);
     top: 0;
     left: 0;
     z-index: 9999;/*最前面に*/
@@ -192,10 +217,10 @@ header {
     -webkit-transform: translateX(-105%);
     transform: translateX(-105%);/*左に隠しておく*/
 }
-
+/* 
 .baritem{
     padding: 30px;
-}
+} */
 
 /*チェックが入ったらもろもろ表示*/
 #nav-input:checked ~ #nav-close {

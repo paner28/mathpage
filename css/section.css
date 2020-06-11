@@ -18,19 +18,19 @@ body {
 }
 
 a {
-    font-family: 'EB Garamond', serif;
     text-decoration: none;
     text-align: center;
     color: black;
-    margin: 10px 0 10px 100px;
-    font-size: 25px;
 }
-a {
+.a {
+    font-family: 'EB Garamond', serif;
+    color: black;
+    font-size: 25px;
     position: relative;
     display: inline-block;
     transition: .3s;
 }
-a::after {
+.a::after {
     position: absolute;
     bottom: .3em;
     left: 0;
@@ -41,13 +41,13 @@ a::after {
     opacity: 0;
     transition: .3s;
 }
-a:hover::after {
+.a:hover::after {
     bottom: 0;
     opacity: 1;
 }
 
-.choice{
-    margin:0 auto;
+.choiced{
+    margin: 15px 0 15px 95px;
 }
 
 em {
@@ -131,8 +131,9 @@ header {
 #nav-content {
     overflow: auto;
     position: fixed;
-    background-color: rgb(204, 249, 255);
+    text-align: center;
     padding: 20px;
+    background-color: rgb(204, 249, 255);
     top: 0;
     left: 0;
     z-index: 9999;/*最前面に*/
@@ -144,10 +145,10 @@ header {
     -webkit-transform: translateX(-105%);
     transform: translateX(-105%);/*左に隠しておく*/
 }
-
+/* 
 .baritem{
     padding: 30px;
-}
+} */
 
 /*チェックが入ったらもろもろ表示*/
 #nav-input:checked ~ #nav-close {
