@@ -4,40 +4,38 @@ function cuturl(){
     var b = a[1].split("-");
     var num = [0,0];
     num[0] = Number(b[0]);
-    num[1] = b[1].slice(1);
+    num[1] = b[1];
+    console.log(b);
     return num;
 }
 
-console.log("3");
+console.log("4");
 
-function getCSV(url){
-    //CSVファイルを文字列で取得。
-    var txt = new XMLHttpRequest();
-    txt.open('get', url, false);
-    txt.send();
-    //改行ごとに配列化
-    var arr = txt.responseText.split('\n');
-    //1次元配列を2次元配列に変換
-    var result = [];
-    for(var i = 0; i < arr.length; i++){
-        //空白行が出てきた時点で終了
-        if(arr[i] == '') break;
-        //","ごとに配列化
-        result[i] = arr[i].split(',');
-        for(var i2 = 0; i2 < result[i].length; i2++){
-            // //数字の場合は「"」を削除
-            // if(result[i][i2].match(/\-?\d+(.\d+)?(e[\+\-]d+)?/)){
-            //     result[i][i2] = parseFloat(result[i][i2].replace('"', ''));
-            // }
+// CSVファイル読み込み
+function csvToArray(path) {
+        var csvData = new Array();
+        var data = new XMLHttpRequest();        
+        data.open("GET", path, false);
+        data.send(null);
+        var LF = String.fromCharCode(10);
+        var lines = data.responseText.split(LF);
+        for (var i = 0; i < lines.length;++i) {
+                var cells = lines[i].split(",");
+                if( cells.length != 1 ) {
+                        csvData.push(cells);
+                }
         }
-    }
-    return result;
+        return csvData;
 }
+
+// ページロード時に実行
+window.onload=function () {
+    var result = csvToArray("main.csv");
+    alert(result[0]);
+};
 
 var num = cuturl();
 console.log(num);
-var result = getCSV("main.csv");
-  
 
 var q1 = document.getElementById("q1");
 var q2 = document.getElementById("q2");
