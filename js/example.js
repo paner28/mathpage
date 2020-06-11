@@ -44,7 +44,8 @@ console.log(question_num);
 // ページロード時に実行
 window.onload=function () {
     var result = csvToArray("main.csv");
-    for (let i=0 ; i < result.length; i++){
+    console.log(result);
+    for (let i=1 ; i < result.length; i++){
         if(result[i][1] == question_num){
             const child1 = document.createElement('span');
             child1.textContent = result[i][2];
