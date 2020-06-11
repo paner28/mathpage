@@ -4,7 +4,7 @@ function cuturl(){
     var b = a[1].split("-");
     var num = [0,0];
     num[0] = Number(b[0]);
-    num[1] = b[1].split(-5);
+    num[1] = b[1].slice(-5);
     console.log(b);
     return num;
 }
@@ -44,7 +44,6 @@ if (num[0]==1){
 // ページロード時に実行
 window.onload=function () {
     var result = csvToArray("main.csv");
-    alert(result[0]);
     for (let i=0 ; i < result.length; i++){
     if(result[i][1] == question_num){
         const child1 = document.createElement('span');
@@ -56,6 +55,7 @@ window.onload=function () {
         const child3 = document.createElement('span');
         child3.textContent = result[i][4];
         q3.appendChild(child3)
+    alert(result[0]);
     }
 }
     
