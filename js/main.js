@@ -43,7 +43,7 @@ window.onload=function () {
     for (let i=1 ; i < result.length; i++){
         if(result[i][1] == question_num){
             answer0 = result[i][4].split(" ");
-            var answers = answer0.map(function(str) {return Number(str)});
+//             var answers = answer0.map(function(str) {return Number(str)});
             const child1 = document.createElement('span');
             child1.textContent = result[i][2];
             q1.appendChild(child1)
