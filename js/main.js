@@ -1,7 +1,7 @@
 function cuturl(){
     var href = window.location.href ;
     var a = href.split("question");
-    var b = a[1].split("-");
+    var b = a[2].split("-");
     var num = [0,0];
     num[0] = Number(b[0]);
     num[1] = Number(b[1].slice(0,-5));
