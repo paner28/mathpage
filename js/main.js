@@ -30,8 +30,8 @@ var num = cuturl();
 var q1 = document.getElementById("q1");
 var q2 = document.getElementById("q2");
 var q3 = document.getElementById("q3");
-var q3 = document.getElementById("q4");
-var q3 = document.getElementById("q5");
+var q4 = document.getElementById("q4");
+var q5 = document.getElementById("q5");
 
 if (num[0]==1){
     var question_num = num[1];
@@ -57,10 +57,10 @@ window.onload=function () {
             q3.appendChild(child3)
             const child4 = document.createElement('span');
             child4.textContent = "☆"*Number(result[i][5]);
-            q4.appendChild(child3)
+            q4.appendChild(child4)
             const child5 = document.createElement('span');
             child5.textContent = result[i][6];
-            q5.appendChild(child3)
+            q5.appendChild(child5)
         }
     }
 
