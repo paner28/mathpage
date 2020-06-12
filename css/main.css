@@ -94,9 +94,26 @@ a {
     opacity: 1;
 }
 
+
 .section{
-    margin-left: 300px;
+    margin-right: auto;
     font-size: 20px;
+}
+
+.parent1{
+    display: flex;
+}
+.parent2{
+    display: flex;
+    justify-content: space-between;
+}
+
+.left{
+    float: left;
+}
+
+.right{
+    float: right;
 }
 
 
