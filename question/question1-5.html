@@ -23,38 +23,42 @@
         <div class="bar"><a href="../home.html">M.Q.</a></div>
     </header>
     <div class="headder">
-        <p id="q1"><b id="q3"></b></p>
-        <form name="form">
-            <p>
-                答え(半角)：<span id="q2"></span><input type="text" name="answer" id="answer" size="12" maxlength="20">
-                <input type="button" value="送信" id="send">
-                <span><a href="../section/section1.html" class="a section">セクションへ戻る</a></span>
-            </p>
-        </form>
-    </div>
-    <div id="aaa">
-        <div id="bbb">
-        <canvas id="canvas" width="1300px" height="520px">HTML5に対応していませんm(__)m</canvas>
+        <div class="parent1">
+            <div id="q1"><b id="q3"></b></div><div id="q4" class="left"></div>
         </div>
+        <form name="form">
+            <div class="parent2">
+                <div class="left">
+                    答え(半角)：<span id="q2"></span><input type="text" name="answer" id="answer" size="12" maxlength="20">
+                    <input type="button" value="送信" id="send">
+                </div>
+                <div class="right"><a href="../section/section1.html" class="a section">セクションへ戻る</a></div>
+            </div>
+        </form>
+        <div id="q5">答え方の例:</div>
     </div>
-    <div id="item">
-        <div id="ccc">
-            <li class="color" style="background-color:#000000"></li>
-            <li class="color" style="background-color:red"></li>
-            <li class="color" style="background-color:blue"></li>
-            <li class="color" style="background-color:#ffffff"></li>
+    
+    <div id="parent" class="parent">
+        <canvas id="canvas" height="" width="">HTML5に対応していませんm(__)m</canvas>
+    </div>
+    
+    <div class="parent">
+        <div id="colors">
+            <div style="background-color:#000000" class="color" id="black"></div>
+            <div style="background-color:#ffffff" class="color" id="white"></div>
+            <div style="background-color:red" class="color" id="red"></div>
+            <div style="background-color:blue" class="color" id="blue"></div>
         </div>
         <div id="item1">
             <p>線の太さ<input type="range" min="1" max="50" value="2" id="lineWidth"><span id="lineNum">2</span></p>
-            <p>透 明 度<input type="range" min="1" max="100" value="100" id="alpha"><span id="alphaNum">100</span></p>
         </div>
         <div id="item2">
-            <p>
-                <button style="width:60px;" id="clear">クリア</button>
-                <button style="width:60px;" onclick="save()">保存</button>
-            </p>
+            <button style="margin-bottom:10px;" id="undo">戻る</button>
+            <button style="width:100px;" id="clear">クリア</button>
+            <!-- <button style="width:100px;" onclick="save()">保存</button> -->
         </div>
     </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="../js/main.js"></script>
 </body>
