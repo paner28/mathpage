@@ -17,6 +17,12 @@ body {
     margin-bottom: 50px;
 }
 
+.questions{
+    display: flex;
+    justify-content: center;
+    flex-wrap:wrap-reverse;
+}
+    
 a {
     text-decoration: none;
     text-align: center;
