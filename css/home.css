@@ -24,8 +24,9 @@ h1 {
     text-align: center;
 }
 
-main{
+.bunnya{
     display: flex;
+    justify-content: center;
 }
 
 .button {
