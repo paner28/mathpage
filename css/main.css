@@ -1,6 +1,6 @@
 body {
-    /* text-align:center; */
     margin:0;
+    padding: 0;
     user-select: none;
 }
 
@@ -16,54 +16,53 @@ h1 {
     font-family: Arial, sans-serif;
     font-weight:bold;
 }
-  
-#canvas {
-    border:2px solid gray;
+
+html, body, #parent{
+    width: 100%;
 }
 
-#aaa {
-    overflow:hidden;
-    margin-top:20px;
+.parent{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+#canvas {
+    border:2px solid gray;
 }
 
 .headder{
     margin-left: 5px;
 }
 
-#bbb {
-    margin-left: 5px;
-    float: left;
-    width: 1320px;
-}
-
-#ccc {
-    float: left;
-    margin-left: 5px;
-    margin-right: 0px;
-    width: 140px;
+#colors {
+    padding: 15px;
+    width: 160px;
     height: 30px;
-    cursor: pointer;
-    user-select: none;
+    display: flex;
+    justify-content: center;
 }
 
-.color{
+.color {
+    margin-right: 10px;
     width: 30px;
     height: 30px;
-    display:inline-block;
-    border-color: rgba(86, 86, 86, .7);
+    cursor: pointer;
+    border:1px solid black;
 }
 
 #item1 {
     float:left;
     width:auto;
-    /* margin-left:100px; */
+    margin-right: 10px;
 }
 
-#item2 {
-    float:left;
-    width:auto;
-    margin-left:10px;
+#item2{
+    margin-top: 13px;
 }
+
+
+
 
 a {
     text-decoration: none;
@@ -94,7 +93,6 @@ a {
     opacity: 1;
 }
 
-
 .section{
     margin-right: auto;
     font-size: 20px;
@@ -115,6 +113,9 @@ a {
 .right{
     float: right;
 }
+
+
+
 
 
 
