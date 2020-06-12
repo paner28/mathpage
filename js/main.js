@@ -56,7 +56,7 @@ window.onload=function () {
             child3.textContent = "Q" + num[1] + ".";
             q3.appendChild(child3)
             const child4 = document.createElement('span');
-            child4.textContent = "☆"*Number(result[i][5]);
+            child4.textContent = "☆".repeat(Number(result[i][5]));
             q4.appendChild(child4)
             const child5 = document.createElement('span');
             child5.textContent = result[i][6];
