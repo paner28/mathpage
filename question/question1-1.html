@@ -23,14 +23,19 @@
         <div class="bar"><a href="../home.html">M.Q.</a></div>
     </header>
     <div class="headder">
-        <p id="q1"><b id="q3"></b></p>
+        <div class="parent1">
+            <div id="q1"><b id="q3"></b></div><div id="q4" class="left"></div>
+        </div>
         <form name="form">
-            <p>
-                答え(半角)：<span id="q2"></span><input type="text" name="answer" id="answer" size="12" maxlength="20">
-                <input type="button" value="送信" id="send">
-                <span><a href="../section/section1.html" class="a section">セクションへ戻る</a></span>
-            </p>
+            <div class="parent2">
+                <div class="left">
+                    答え(半角)：<span id="q2"></span><input type="text" name="answer" id="answer" size="12" maxlength="20">
+                    <input type="button" value="送信" id="send">
+                </div>
+                <div class="right"><a href="../section/section1.html" class="a section">セクションへ戻る</a></div>
+            </div>
         </form>
+        <div id="q5">答え方の例:</div>
     </div>
     <div id="aaa">
         <div id="bbb">
@@ -42,7 +47,7 @@
             <li class="color" style="background-color:#000000"></li>
             <li class="color" style="background-color:red"></li>
             <li class="color" style="background-color:blue"></li>
-            <li class="color" style="background-color:#ffffff; border-color: black;"></li>
+            <li class="color" style="background-color:#ffffff"></li>
         </div>
         <div id="item1">
             <p>線の太さ<input type="range" min="1" max="50" value="2" id="lineWidth"><span id="lineNum">2</span></p>
