@@ -25,13 +25,11 @@ function csvToArray(path) {
         return csvData;
 }
 
-var answers = [];
+var answer0 = [];
 var num = cuturl();
 var q1 = document.getElementById("q1");
 var q2 = document.getElementById("q2");
 var q3 = document.getElementById("q3");
-var q4 = document.getElementById("q4");
-var q5 = document.getElementById("q5");
 
 if (num[0]==1){
     var question_num = num[1];
@@ -44,8 +42,8 @@ window.onload=function () {
     var result = csvToArray("main.csv");
     for (let i=1 ; i < result.length; i++){
         if(result[i][1] == question_num){
-            answers = result[i][4].split(" ");
-//             var answers = answer0.map(function(str) {return Number(str)});
+            answer0 = result[i][4].split(" ");
+            var answers = answer0.map(function(str) {return Number(str)});
             const child1 = document.createElement('span');
             child1.textContent = result[i][2];
             q1.appendChild(child1)
@@ -55,12 +53,6 @@ window.onload=function () {
             const child3 = document.createElement('span');
             child3.textContent = "Q" + num[1] + ".";
             q3.appendChild(child3)
-            const child4 = document.createElement('span');
-            child4.textContent = "☆".repeat(Number(result[i][5]));
-            q4.appendChild(child4)
-            const child5 = document.createElement('span');
-            child5.textContent = result[i][6];
-            q5.appendChild(child5)
         }
     }
 
@@ -82,6 +74,37 @@ window.onload=function () {
     console.log(result);
 };
 
+
+// ここからcanvas
+var parent = null; // キャンバスの親要素
+var canvas = null; // キャンバス
+var g = null;  // コンテキスト
+var $id = function(id){ return document.getElementById(id); };  // DOM取得用
+var img = new Image(); //画像用
+var IMG_COOLMAN = "coolman.png";
+
+// キャンバスのサイズをウインドウに合わせて変更
+function getSize(){
+    // キャンバスのサイズを再設定
+    canvas.width = parent.offsetWidth - 100;
+    canvas.height = 800;
+}
+
+//  リサイズ時
+window.addEventListener("resize", function(){
+    getSize();
+});
+
+// 起動処理
+window.addEventListener("load", function(){
+    // キャンバスの親要素情報取得（親要素が無いとキャンバスのサイズが画面いっぱいに表示できないため）
+    parent = $id("parent");
+    canvas = $id("canvas");
+    // キャンバスをウインドウサイズにする
+    getSize();
+
+});
+
 // 以下描写に関する内容
 var canvas=document.getElementById("canvas");
 var ctx=canvas.getContext("2d");
@@ -90,7 +113,7 @@ var mouse={x:0,y:0,x1:0,y1:0,color:"black"};
 var draw=false;canvas.addEventListener("mousemove",function(e){
     var rect=e.target.getBoundingClientRect();
     ctx.lineWidth=document.getElementById("lineWidth").value;
-    ctx.globalAlpha=document.getElementById("alpha").value/100;mouseX=e.clientX-rect.left;
+    mouseX=e.clientX-rect.left;
     mouseY=e.clientY-rect.top;
     if(draw===true){
         ctx.beginPath();
@@ -114,8 +137,24 @@ lineWidth.addEventListener("mousemove",function(){
     var lineNum=document.getElementById("lineWidth").value;document.getElementById("lineNum").innerHTML=lineNum;
 });
 
-$('li').click(function(){
-    ctx.strokeStyle=$(this).css('background-color');
+
+
+
+color1 = $id("black");
+color1.addEventListener("click", function(){
+    ctx.strokeStyle = $(this).css('background-color');
+});
+color2 = $id("white");
+color2.addEventListener("click", function(){
+    ctx.strokeStyle = $(this).css('background-color');
+});
+color3 = $id("red");
+color3.addEventListener("click", function(){
+    ctx.strokeStyle = $(this).css('background-color');
+});
+color4 = $id("blue");
+color4.addEventListener("click", function(){
+    ctx.strokeStyle = $(this).css('background-color');
 });
 
 $('#clear').click(function(e){
@@ -124,11 +163,17 @@ $('#clear').click(function(e){
     ctx.clearRect(0,0,canvas.width,canvas.height);
 });
 
-function save(){
-    var can=canvas.toDataURL("image/png");
-    can=can.replace("image/png","image/octet-stream");
-    window.open(can,"save");
-}
+//戻るボタンを配置
+$('#undo').click(function(e) {
+    ctx.putImageData(undoImage,0,0);
+});
+
+// function save(){
+//     var can=document.getElementById('canvas');
+//     can=can.replace("image/png","image/octet-stream");
+//     window.open(can,"save");
+// }
+
 
 var finger=new Array;for(var i=0;i<10;i++){
     finger[i]={x:0,y:0,x1:0,y1:0,color:"rgb("+Math.floor(Math.random()*16)*15+","+Math.floor(Math.random()*16)*15+","+Math.floor(Math.random()*16)*15+")"};
@@ -137,7 +182,9 @@ var finger=new Array;for(var i=0;i<10;i++){
 canvas.addEventListener("touchstart",function(e){
     e.preventDefault();
     var rect=e.target.getBoundingClientRect();
-    ctx.lineWidth=document.getElementById("lineWidth").value;ctx.globalAlpha=document.getElementById("alpha").value/100;undoImage=ctx.getImageData(0,0,canvas.width,canvas.height);
+    ctx.lineWidth=document.getElementById("lineWidth").value;
+    ctx.globalAlpha=1;
+    undoImage=ctx.getImageData(0,0,canvas.width,canvas.height);
     for(var i=0;i<finger.length;i++){
         finger[i].x1=e.touches[i].clientX-rect.left;finger[i].y1=e.touches[i].clientY-rect.top;
     }
@@ -158,8 +205,4 @@ canvas.addEventListener("touchmove",function(e){
 lineWidth.addEventListener("touchmove",function(){
     var lineNum=document.getElementById("lineWidth").value;
     document.getElementById("lineNum").innerHTML=lineNum;
-});
-
-alpha.addEventListener("touchmove",function(){
-    var alphaNum=document.getElementById("alpha").value;document.getElementById("alphaNum").innerHTML=alphaNum;
 });
