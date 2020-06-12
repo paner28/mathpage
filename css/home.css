@@ -27,6 +27,7 @@ h1 {
 .bunnya{
     display: flex;
     justify-content: center;
+    flex-wrap:wrap;
 }
 
 .button {
