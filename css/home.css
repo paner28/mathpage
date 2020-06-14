@@ -100,6 +100,7 @@ a {
 
 .sandbox-correct-pronounciation {
     padding: 100px 0 100px 0;
+    margin-top: 9px;
 }
 
 .heading-correct-pronounciation {
@@ -144,10 +145,17 @@ em {
 /* ハンバーガー */
 
 header {
+    position: fixed;
+    width: 100%;
     padding:10px;
     background: skyblue;
     height: 70px;
+    top: 0;
+    left: 0;
+    margin: 0;
+    z-index: 2;
 }
+
 
 #nav-drawer {
     margin: 0;
