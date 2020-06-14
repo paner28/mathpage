@@ -10,7 +10,6 @@ body {
     text-align: center;
     font-size: 35px;
     /* background-color: rgb(175, 255, 255); */
-    margin-top: 95px;
 }
 
 .title{
@@ -58,6 +57,7 @@ a {
 }
 
 em {
+    margin-top: 90px;
     font-family: 'EB Garamond', serif;
     font-size: 3.5em;
     text-transform: uppercase;
