@@ -79,6 +79,7 @@ header {
     padding:10px;
     background: skyblue;
     height: 70px;
+    position: fixed;
 }
 
 #nav-drawer {
