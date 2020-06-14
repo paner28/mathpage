@@ -29,6 +29,7 @@ html, body, #parent{
 
 #canvas {
     border:2px solid gray;
+    margin-bottom: 80px;
 }
 
 .headder{
@@ -119,8 +120,7 @@ a {
     position: fixed;
     bottom: 0;
     background-color: #efefef;
-    width: 600px;
-    left: 50%;
+    width: 100%;
 }
 
 
