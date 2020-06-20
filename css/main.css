@@ -128,6 +128,28 @@ a {
 
 
 
+input[type="button"]{
+    background-color: rgb(240, 254, 255);
+    width: 42px;
+    height: 28px;
+}
+
+.button1{
+    height: 60px !important;
+}
+
+[name="myForm"]{
+    margin-left: 50px;
+}
+
+td{
+    background-color: skyblue;
+}
+
+
+
+
+
 
 
 /* ハンバーガー */
