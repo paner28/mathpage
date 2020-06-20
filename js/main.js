@@ -81,6 +81,32 @@ window.onload=function () {
     console.log(result);
 };
 
+// ここから電卓
+myTotal = 0;	// 現在の合計値
+myInput = "";	// 現在入力している値
+ 	
+function myValue(myData){
+    myInput += myData;	// 現在入力している値に追加
+    document.myForm.myLine.value = myInput;	// 現在入力している値表示
+}
+
+function allClear(){
+    myTotal = 0;	// 合計クリア
+    myInput = "";	// 現在入力している値をクリア
+    document.myForm.myLine.value = myTotal;	// つまり、０を表示
+}
+
+function backspace(){
+    if (myInput.length <= 1){
+        myTotal = 0;
+        myInput = "";
+        document.myForm.myLine.value = myTotal;	// つまり、０を表示
+    }else{
+        myInput = myInput.slice( 0, -1 );
+        document.myForm.myLine.value = myInput;	// 現在入力している値表示
+    }
+}
+
 
 // ここからcanvas
 var parent = null; // キャンバスの親要素
