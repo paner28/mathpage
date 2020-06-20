@@ -26,17 +26,54 @@
         <div class="parent1">
             <div id="q1"><b id="q3"></b></div><div id="q4" class="left"></div>
         </div>
+        <div id="q5">答え方の例:</div>
         <form name="form">
             <div class="parent2">
                 <div class="left">
-                    答え(半角)：<span id="q2"></span><input type="text" name="answer" id="answer" size="12" maxlength="20">
-                    <input type="button" value="送信" id="send">
+                    答え(半角)：<span id="q2"></span>
+<!--                     <input type="text" name="answer" id="answer" size="12" maxlength="20"> -->
+<!--                     <input type="button" value="送信" id="send"> -->
                 </div>
                 <div class="right"><a href="../section/section2.html" class="a section">セクションへ戻る</a></div>
             </div>
         </form>
-        <div id="q5">答え方の例:</div>
     </div>
+    
+    <form name="myForm" margin="0 auto">
+        <table border="1" bgcolor="skyblue">
+            <tr>
+                <td colspan="8"><input type="text" size="40" name="myLine" value="0" id="answer"></td>
+            </tr>
+            <tr>
+                <td align="center"><input type="button" value=" １ " onclick="myValue('1')"></td>
+                <td align="center"><input type="button" value=" ２ " onclick="myValue('2')"></td>
+                <td align="center"><input type="button" value=" ３ " onclick="myValue('3')"></td>
+                <td align="center"><input type="button" value=" + " onclick="myValue('+')"></td>
+                <td align="center"><input type="button" value=" * " onclick="myValue('*')"></td>
+                <td align="center"><input type="button" value=" x " onclick="myValue('x')"></td>
+                <td align="center"><input type="button" value=" C " onclick="allClear()"></td>
+                <td align="center"><input type="button" value=" D " onclick="backspace()"></td>
+            </tr>
+            <tr>
+                <td align="center"><input type="button" value=" ４ " onclick="myValue('4')"></td>
+                <td align="center"><input type="button" value=" ５ " onclick="myValue('5')"></td>
+                <td align="center"><input type="button" value=" ６ " onclick="myValue('6')"></td>
+                <td align="center"><input type="button" value=" - " onclick="myValue('-')"></td>
+                <td align="center"><input type="button" value=" / " onclick="myValue('/')"></td>
+                <td align="center"><input type="button" value=" y " onclick="myValue('y')"></td>
+                <td rowspan="2" align="center"><input type="button" value=" " onclick="myValue(' ')" class="button1"></td>
+                <td rowspan="2" align="center"><input type="button" id="send" value="送信" class="button1"></td>
+            </tr>
+            <tr>
+                <td align="center"><input type="button" value=" ７ " onclick="myValue('7')"></td>
+                <td align="center"><input type="button" value=" ８ " onclick="myValue('8')"></td>
+                <td align="center"><input type="button" value=" ９ " onclick="myValue('9')"></td>
+                <td align="center"><input type="button" value=" 0 " onclick="myValue('0')"></td>
+                <td align="center"><input type="button" value=" . " onclick="myValue('.')"></td>
+                <td align="center"><input type="button" value=" z " onclick="myValue('z')"></td>
+            </tr>
+        </table>
+    </form>
     
     <div id="parent" class="parent">
         <canvas id="canvas" height="" width="">HTML5に対応していませんm(__)m</canvas>
